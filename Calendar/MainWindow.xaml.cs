@@ -100,7 +100,7 @@ namespace Calendar
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center,
                     FontWeight = FontWeights.Bold,
-                    Foreground = Brushes.LightGray,
+                    Foreground = new SolidColorBrush(Color.FromRgb(208, 208, 208)),
                     FontSize = 16
                 };
                 Grid.SetRow(dayName, 0);
@@ -130,12 +130,23 @@ namespace Calendar
             {
                 DateTime date = firstDateToDisplay.AddDays(i);
 
-                Border dayBorder = new Border
+                // Create the background border with the glow effect and rounded corners
+                Border backgroundBorder = new Border
                 {
+                    Background = Brushes.Transparent,
                     BorderBrush = Brushes.Gray,
                     BorderThickness = new Thickness(0.5),
+                    Style = this.FindResource("DayCellBackgroundStyle") as Style
+                };
+
+                // Create the content grid
+                Grid contentGrid = new Grid
+                {
                     Background = Brushes.Transparent
                 };
+
+                // Place the content inside the background border
+                backgroundBorder.Child = contentGrid;
 
                 StackPanel dayContent = new StackPanel
                 {
@@ -147,17 +158,14 @@ namespace Calendar
                 {
                     Text = date.Day.ToString(),
                     HorizontalAlignment = HorizontalAlignment.Center,
-                    FontSize = 14
+                    FontSize = 14,
+                    Foreground = new SolidColorBrush(Color.FromRgb(208, 208, 208))
                 };
 
                 // Check if the date is in the current month
                 bool isCurrentMonth = date.Month == targetDate.Month;
 
-                if (isCurrentMonth)
-                {
-                    dayNumber.Foreground = Brushes.White;
-                }
-                else
+                if (!isCurrentMonth)
                 {
                     dayNumber.Foreground = Brushes.Gray;
                     dayNumber.Text += $"\n{date.ToString("MMM")}";
@@ -171,7 +179,7 @@ namespace Calendar
                 // Apply subtle blue tint to weekends
                 if (isWeekend && isCurrentMonth)
                 {
-                    dayBorder.Background = new SolidColorBrush(Color.FromRgb(45, 50, 60)); // Subtle blue tint
+                    contentGrid.Background = new SolidColorBrush(Color.FromRgb(45, 50, 60)); // Subtle blue tint
                 }
 
                 // Check if the date is a holiday
@@ -179,8 +187,7 @@ namespace Calendar
 
                 if (holiday != null)
                 {
-                    // Style the day cell for a holiday
-                    dayBorder.Background = new SolidColorBrush(Color.FromRgb(70, 70, 70)); // Slightly different gray
+                    contentGrid.Background = new SolidColorBrush(Color.FromRgb(70, 70, 70)); // Slightly different gray
 
                     // Add the holiday name to the cell
                     TextBlock holidayName = new TextBlock
@@ -204,16 +211,17 @@ namespace Calendar
                 bool isToday = date.Date == DateTime.Now.Date;
                 if (isToday)
                 {
-                    // Make the current day the most noticeable with darker purple
-                    dayBorder.Background = new SolidColorBrush(Color.FromRgb(75, 0, 130)); // Darker purple color
+                    contentGrid.Background = new SolidColorBrush(Color.FromRgb(75, 0, 130)); // Darker purple color
                     dayNumber.Foreground = Brushes.White;
                 }
 
-                dayBorder.Child = dayContent;
+                // Add the day content to the content grid
+                contentGrid.Children.Add(dayContent);
 
-                Grid.SetRow(dayBorder, currentRow);
-                Grid.SetColumn(dayBorder, currentColumn);
-                CalendarGrid.Children.Add(dayBorder);
+                // Add the background border to the CalendarGrid
+                Grid.SetRow(backgroundBorder, currentRow);
+                Grid.SetColumn(backgroundBorder, currentColumn);
+                CalendarGrid.Children.Add(backgroundBorder);
 
                 // Move to the next cell
                 currentColumn++;

@@ -1,9 +1,3 @@
-C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.exe
-C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.deps.json
-C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.runtimeconfig.json
-C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.dll
-C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.pdb
-C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\Calendar.csproj.AssemblyReference.cache
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\MainWindow.g.cs
@@ -14,6 +8,12 @@ C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\Calendar.GeneratedMSBu
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\Calendar.AssemblyInfoInputs.cache
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\Calendar.AssemblyInfo.cs
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\Calendar.csproj.CoreCompileInputs.cache
+C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.exe
+C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.deps.json
+C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.runtimeconfig.json
+C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.dll
+C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Calendar.pdb
+C:\Users\joshu\Calendar\Calendar\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\Calendar.csproj.CopyComplete
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\Calendar.dll
 C:\Users\joshu\Calendar\Calendar\obj\Debug\net7.0-windows\refint\Calendar.dll
