@@ -1,11 +1,13 @@
 # C# Calendar Application
 
-Since the new Windows 11 update has broken the native Windows Calendar application on my computer I made my own.
+![image](https://github.com/user-attachments/assets/5e50492d-867c-477b-85dc-51bb22ebaee3)
+
+Due to recent compatibility issues with a Windows 11 update that has affected my native Windows Calendar, I have developed a simple custom calendar application to replace it.
 
 ## Features
 
 - **View Monthly Calendar**: Displays a full month view where users can navigate between months.
-- **Holiday's Included**: Uses Api calls to show each holiday on the Calendar
+- **Holiday's Included**: Integrates API calls to display public holidays directly on the calendar.
 
 ## Installation
 To run this application, you will need:
